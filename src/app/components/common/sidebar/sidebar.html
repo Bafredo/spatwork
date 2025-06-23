@@ -1,0 +1,128 @@
+<div class="w-[25vw] h-full p-4 bg-[#0498fb41] backdrop-blur-xs">
+  <h1 class="font-bold text-2xl mb-2">WorkSpace Name</h1>
+  <div class="gap-2">
+    <div class="flex gap-3 mx-4">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-users-icon lucide-users"
+      >
+        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+        <path d="M16 3.128a4 4 0 0 1 0 7.744" />
+        <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+        <circle cx="9" cy="7" r="4" />
+      </svg>
+      <h2>Team Members (5)</h2>
+    </div>
+    <div class="scroll-box bg-[rgba(255,255,255,0.7)] w-full max-h-[30vh] mt-2 rounded-2xl p-2 overflow-y-scroll">
+      <div *ngFor="let member of members" class=" text-gray-500 flex items-center justify-between px-1 py-1 my-1 border-b-1 border-b-gray-200">
+      <div class="flex items-center gap-1">  
+        <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gray-200">
+          <img class="w-[20px] rounded-full object-cover"
+          src="" alt="">
+        </div>
+        <p>
+            {{member}}
+        </p>
+      </div>
+        <div class="w-2 h-2 rounded-full bg-green-600">
+
+        </div>
+      </div>
+
+      
+      <div *ngFor="let member of members" class=" text-gray-400 flex items-center justify-between px-1 my-1">
+      <div class="flex items-center gap-1">  
+        <div class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-200">
+          <img class="max-w-full rounded-full object-cover"
+          src="" alt="">
+        </div>
+        <p>
+            {{member}}
+        </p>
+      </div>
+        <div class="w-2 h-2 rounded-full bg-red-600">
+
+        </div>
+      </div>
+     
+    </div>
+  </div>
+  <div class="gap-2 mt-5">
+    <div class="flex gap-3 mx-4">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-logs-icon lucide-logs"
+      >
+        <path d="M13 12h8" />
+        <path d="M13 18h8" />
+        <path d="M13 6h8" />
+        <path d="M3 12h1" />
+        <path d="M3 18h1" />
+        <path d="M3 6h1" />
+        <path d="M8 12h1" />
+        <path d="M8 18h1" />
+        <path d="M8 6h1" />
+      </svg>
+      <h2>Recent Activities</h2>
+    </div>
+    <div
+      class="bg-[rgba(255,255,255,0.7)] w-full h-fit mt-2 rounded-2xl p-1"
+    >
+      <div *ngFor="let log of logs;let i = index" class="text-md text-gray-500  truncate flex justify-between border-b-1 border-b-gray-200">
+        <p class="whitespace-nowrap p-1 overflow-ellipsis w-[75%] truncate ">{{(i + 1)+". " + log.data}}</p>
+        <ng-container [ngSwitch]="log.type">
+            <p *ngSwitchCase="'info'" class="text-yellow-500 text-sm p-2">INFO</p>
+            <p *ngSwitchCase="'update'" class="text-blue-500 text-sm p-2">UPDATE</p>
+            <p *ngSwitchCase="'event'" class="text-green-500 text-sm p-2">EVENT</p>
+        </ng-container>
+      </div>
+  </div>
+  </div>
+  <div
+    class="absolute bottom-0 right-0 w-[25vw] h-[8vh] flex items-center justify-center"
+  >
+    <div
+      class="bg-[rgba(255,255,255,0.9)] w-[90%] p-2 rounded-2xl flex items-center justify-between"
+    >
+      <input
+        type="text"
+        class="ask_ai w-full h-full"
+        placeholder="Ask Spatwork"
+      />
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-send-horizontal-icon lucide-send-horizontal"
+      >
+        <path
+          d="M3.714 3.048a.498.498 0 0 0-.683.627l2.843 7.627a2 2 0 0 1 0 1.396l-2.842 7.627a.498.498 0 0 0 .682.627l18-8.5a.5.5 0 0 0 0-.904z"
+        />
+        <path d="M6 12h16" />
+      </svg>
+    </div>
+  </div>
+</div>
