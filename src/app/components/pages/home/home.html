@@ -1,0 +1,49 @@
+<div class="p-4 space-y-10">
+
+  <!-- My Workspaces Header -->
+  <div class="flex items-center justify-between">
+    <h2 class="text-2xl font-bold">My Workspaces</h2>
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <circle cx="12" cy="12" r="1" />
+      <circle cx="12" cy="5" r="1" />
+      <circle cx="12" cy="19" r="1" />
+    </svg>
+  </div>
+
+  <!-- My Workspaces Grid -->
+  <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    
+    <!-- Add Workspace Card -->
+    <div class="bg-[#65bfffa2] h-48 rounded-2xl flex items-center justify-center shadow hover:scale-105 transition cursor-pointer">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path d="M5 12h14" />
+        <path d="M12 5v14" />
+      </svg>
+    </div>
+
+    <!-- My Workspaces Cards -->
+    <div *ngFor="let mine of myWorkSpaces" class="bg-slate-400 min-h-48 rounded-2xl shadow p-4 flex flex-col justify-between hover:shadow-lg transition">
+      <h3 class="text-lg font-semibold text-white truncate">{{ mine.name }}</h3>
+      <p class="text-sm text-white line-clamp-3">{{ mine.goal }}</p>
+    </div>
+  </div>
+
+  <!-- Shared Workspaces Header -->
+  <div class="flex items-center justify-between">
+    <h2 class="text-2xl font-bold">Shared Workspaces</h2>
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <circle cx="12" cy="12" r="1" />
+      <circle cx="12" cy="5" r="1" />
+      <circle cx="12" cy="19" r="1" />
+    </svg>
+  </div>
+
+  <!-- Shared Workspaces Grid -->
+  <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <div *ngFor="let mine of sharedWorkSpaces" class="bg-slate-400 h-48 rounded-2xl shadow p-4 flex flex-col justify-between hover:shadow-lg transition">
+      <h3 class="text-lg font-semibold text-white truncate">{{ mine.name }}</h3>
+      <p class="text-sm text-white line-clamp-3">{{ mine.goal }}</p>
+    </div>
+  </div>
+
+</div>

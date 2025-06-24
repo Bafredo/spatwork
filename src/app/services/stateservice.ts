@@ -3,7 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class StateService {
-  private _isLoggedIn = new BehaviorSubject<boolean>(false); // you can default to false
+  private _isLoggedIn = new BehaviorSubject<boolean>(true); // you can default to false
   isLoggedIn$ = this._isLoggedIn.asObservable();
 
   public login() {
